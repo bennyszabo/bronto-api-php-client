@@ -130,7 +130,7 @@ class Bronto_Api_Rowset_Iterator implements Iterator, Countable
                     $value = array($value);
                 }
                 foreach ($value as $subkey => $subvalue) {
-                    if ($subkey == $queryParam) {
+                    if ($subkey == $queryParam || is_numeric($subkey)) {
                         switch ($queryParam) {
                             case 'readDirection':
                                 $this->_nextParamValues[$queryParam] = Bronto_Api_Object::DIRECTION_NEXT;
